@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import PwaInstallPopupIOS from "react-pwa-install-ios";
+import gebaeude from "./gebaeude.jpeg";
+import hausrat from "./hausratversicherung.jpeg";
+import unfall from "./unfall.jpeg";
+import motor from "./motor.jpeg";
+import rechtschutz from "./rechtschutz.jpeg";
+import haftpflicht from "./haftpflicht.jpeg";
 
 function App() {
+  var versicherungen = { "hausrat": hausrat, "haftpflicht": haftpflicht, "unfall": unfall, "rechtschutz":rechtschutz, "gebaeude":gebaeude, "motor": motor  };
+
+  const versicherungen_bilder = Object.keys(versicherungen).map((key) => (
+    <div className="card">
+      <img
+        className="card--avatar"
+        key={key}
+        src={versicherungen[key]}
+        alt=""
+      />
+      <h1 className="card--title">{key}</h1>
+      <a className="card--link" href="#">
+        Wissen warum
+      </a>
+    </div>
+  ));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {versicherungen_bilder}
+      <PwaInstallPopupIOS
+        delay={3}
+        lang="de"
+        force
+        appIcon="./logo192.png"
+      ></PwaInstallPopupIOS>
     </div>
   );
 }
