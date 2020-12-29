@@ -1,5 +1,5 @@
 {
-  "short_name": "PVA App",
+  "short_name": "PVA",
   "name": "Progressive Versicherung App",
   "icons": [
     {
@@ -17,6 +17,23 @@
       "type": "image/png",
       "sizes": "512x512"
     }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot.png",
+      "sizes": "1280x855",
+      "type": "image/webp"
+    },
+    {
+      "src": "screenshot.png",
+      "sizes": "1280x855",
+      "type": "image/webp"
+    }
+  ],
+  "features": [
+    "Installierbar!",
+    "Offline!",
+    "Feels Native!"
   ],
   "start_url": ".",
   "display": "standalone",

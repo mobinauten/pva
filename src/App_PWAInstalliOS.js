@@ -37,12 +37,12 @@ function App() {
   return (
     <div className="container">
       {versicherungen_bilder}
-      <pwa-install
-        installbuttontext="Installation"
-        explainer="Die PVA Demo App vereinigt und testet neue PVA Features."
-        iosinstallinfotext="Öffnen Sie PVA im Safari Browser. Clicken Sie den 'Share Button'. Mit '+ Zum Homebildschirm hinzufügen' installieren Sie die PVA."
-        descriptionheader="Die PVA Demo App vereinigt und testet neue PVA Features. Diese arbeitet im Offline Modus. Bietet Installationsroutinen/hinweise an und optimiert das native Aussehen und 'Feeling'. Zur PVA App existiert auch ein gleichnamige Github Projekt."
-      ></pwa-install>
+      <PwaInstallPopupIOS
+        delay={3}
+        lang="de"
+        force
+        appIcon="./logo192.png"
+      ></PwaInstallPopupIOS>
     </div>
   );
 }
